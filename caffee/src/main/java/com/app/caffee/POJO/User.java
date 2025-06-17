@@ -13,7 +13,15 @@ import jakarta.persistence.Table;
 import lombok.Data;
 import java.io.Serializable;
 
-@NamedQuery(name = "User.findByEmailId", query = "SELECT u FROM User u WHERE u.email = :email")
+@NamedQuery(name = "User.findByEmailId", query = "SELECT u FROM User u WHERE u.email=:email")
+
+@NamedQuery(name = "User.getAllUsers", query = "select new com.app.caffee.wrapper.UserWrapper(u.id, u.name, u.email, u.contactNumber, u.status) from User u where u.role='user'")
+
+@NamedQuery(name = "User.getAllUsers", query = "select u.email from User u where u.role='admin'")
+
+@NamedQuery(name = "User.updateStatus", query = "update User u set u.status=:status where u.id=:id") 
+
+
 
 @Entity
 @Data
