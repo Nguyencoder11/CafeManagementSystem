@@ -63,7 +63,7 @@ public class JwtFilter extends OncePerRequestFilter {
     }
 
      public boolean isUser() {
-        return "user".equalsIgnoreCase(claims.get("user", String.class));
+        return "user".equalsIgnoreCase(claims.get("role", String.class));
     }
 
     public String getCurrentUser() {
