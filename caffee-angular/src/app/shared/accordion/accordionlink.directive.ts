@@ -19,17 +19,17 @@ export class AccordionLinkDirective implements OnInit, OnDestroy {
   @HostBinding('class.selected')
   @Input()
   get selected(): boolean {
-    return this._selected;
+    return this.select;
   }
 
   set selected(value: boolean) {
-    this._selected = value;
+    this.select = value;
     if (value) {
       this.nav.closeOtherLinks(this);
     }
   }
 
-  protected _selected: boolean=false;
+  protected select = false;
   protected nav: AccordionDirective;
 
   constructor(@Inject(AccordionDirective) nav: AccordionDirective) {
