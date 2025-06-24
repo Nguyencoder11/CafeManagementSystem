@@ -9,6 +9,6 @@ export class ViewBillProductsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 }

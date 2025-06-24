@@ -13,7 +13,7 @@ export class AccordionAnchorDirective {
   }
 
   @HostListener('click', ['$event'])
-  onClick(e: any) {
+  onClick(e: any): void {
     this.navlink.toggle();
   }
 }
