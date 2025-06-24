@@ -15,6 +15,20 @@ import { AppHeaderComponent } from './layouts/full/header/header.component';
 import { AppSidebarComponent } from './layouts/full/sidebar/sidebar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
+import {NgxUiLoaderConfig, NgxUiLoaderModule, SPINNER} from 'ngx-ui-loader';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { LoginComponent } from './login/login.component';
+
+const ngxUiLoaderConfig: NgxUiLoaderConfig = {
+  text: 'Loading...',
+  textColor: '#fff',
+  textPosition: 'center-center',
+  bgsColor: '#7b1fa2',
+  fgsColor: '#7b1fa2',
+  fgsType: SPINNER.threeStrings,
+  fgsSize: 100,
+  hasProgressBar: false
+};
 
 @NgModule({
   declarations: [
@@ -24,7 +38,9 @@ import { SignupComponent } from './signup/signup.component';
     FullComponent,
     AppHeaderComponent,
     AppSidebarComponent,
-    SignupComponent
+    SignupComponent,
+    ForgotPasswordComponent,
+    LoginComponent
    ],
   imports: [
     BrowserModule,
@@ -35,7 +51,8 @@ import { SignupComponent } from './signup/signup.component';
     MaterialModule,
     FlexLayoutModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
