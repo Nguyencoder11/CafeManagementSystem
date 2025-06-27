@@ -32,8 +32,16 @@ export class ProductService {
   }
 
   delete(id: any): Observable<any> {
-    return this.httpClient.delete(this.url + `/product/delete/${id}`, {
+    return this.httpClient.post(this.url + `/product/delete/${id}`, {
       headers: new HttpHeaders().set('Content-Type', 'application/json')
     });
+  }
+
+  getProductsByCategory(id: any): Observable<any> {
+    return this.httpClient.get(this.url + `/product/getByCategory/${id}`);
+  }
+
+  getById(id: any): Observable<any> {
+    return this.httpClient.get(this.url + `/product/getById/${id}`);
   }
 }

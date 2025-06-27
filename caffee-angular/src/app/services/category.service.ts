@@ -24,4 +24,8 @@ export class CategoryService {
   getCategory(): Observable<any> {
     return this.httpClient.get(this.url + '/category/get');
   }
+
+  getFilteredCategorys(): Observable<any> {
+    return this.httpClient.get(this.url + '/category/get?filterValue=true');
+  }
 }
