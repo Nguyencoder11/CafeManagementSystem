@@ -36,4 +36,12 @@ export class UserService {
         headers: new HttpHeaders().set('Content-Type', 'application/json')
       });
   }
+  getUsers(): Observable<any> {
+    return this.httpClient.get(this.url + '/user/get');
+  }
+  update(data: any): Observable<any> {
+    return this.httpClient.post(this.url + '/user/update', data, {
+      headers: new HttpHeaders().set('Content-Type', 'application/json')
+    });
+  }
 }
